@@ -1,0 +1,199 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle, #000000, #0a0a0f);
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* BOTÓN */
+.btn-regresar {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #ff4b5c;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  z-index: 10;
+}
+
+/* FRASE ARRIBA */
+.frase {
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+
+  text-shadow:
+    0 0 10px #fc7986,
+    0 0 20px #f7e4f8,
+    0 0 40px #ffa9b2;
+
+  animation: aparecerTexto 2s ease forwards;
+}
+
+@keyframes aparecerTexto {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* JARDÍN */
+.jardin {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* FLOR BASE */
+.flor {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* FLORES ABAJO */
+.flor {
+  bottom: 0;
+  animation: crecerFlor 2s ease forwards, mover 4s ease-in-out infinite;
+}
+
+/* FLORES ARRIBA */
+.flor.flotante {
+  animation: flotarFlor 6s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+/* TALLO */
+.tallo {
+  width: 4px;
+  height: 0;
+  background: #2e7d32;
+  animation: crecerTallo 1.5s forwards;
+}
+
+/* HOJAS */
+.hoja {
+  width: 20px;
+  height: 10px;
+  background: #2e7d32;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.hoja.izq {
+  left: -15px;
+  top: 30px;
+  transform: rotate(-30deg);
+}
+
+.hoja.der {
+  right: -15px;
+  top: 40px;
+  transform: rotate(30deg);
+}
+
+/* FLOR ARRIBA */
+.flower-top {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+/* PÉTALOS */
+.petalo {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+
+  box-shadow:
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 20px currentColor;
+}
+
+.petalo:nth-child(1) { top: -10px; left: 0; }
+.petalo:nth-child(2) { left: -10px; top: 0; }
+.petalo:nth-child(3) { right: -10px; top: 0; }
+.petalo:nth-child(4) { bottom: -10px; left: 0; }
+
+/* CENTRO */
+.centro {
+  width: 10px;
+  height: 10px;
+  background: #fff176;
+  border-radius: 50%;
+  position: relative;
+
+  box-shadow:
+    0 0 10px #fff176,
+    0 0 20px #fff176;
+}
+
+/* ANIMACIONES */
+@keyframes crecerTallo {
+  to { height: 80px; }
+}
+
+@keyframes crecerFlor {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* BRISA */
+@keyframes mover {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+
+/* FLORES ARRIBA MOVIMIENTO */
+@keyframes flotarFlor {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* PARTÍCULAS */
+.particula {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+ animation: flotar 5s linear infinite;
+  box-shadow:
+    0 0 10px rgb(243, 207, 44),
+    0 0 20px #ffffff,
+    0 0 40px #ff4d6d;
+
+  opacity: 1;
+  animation: flotar 5s linear infinite;
+}
+
+@keyframes flotar {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}

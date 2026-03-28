@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  background: radial-gradient(circle, #000, #0a0a0f);
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* BOTÓN */
+.btn-regresar {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #ff4b5c;
+  color: rgb(255, 138, 189);
+  padding: 10px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  z-index: 10;
+}
+
+/* CONTENEDOR */
+#contenedor {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* GRUPO */
+.grupo-corazon {
+  position: absolute;
+}
+
+/* CORAZONES */
+.corazon {
+  position: absolute;
+  color: #fafafa;
+  font-size: 14px;
+
+  text-shadow:
+    0 0 5px #ffffff,
+   
+   
+}.texto-mily {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ece9e9;
+  font-size: 32px;
+  font-weight: bold;
+
+  text-shadow:
+    0 0 10px #ff4d6d,
+    0 0 20px #ff4d6d,
+    0 0 40px #ff4d6d;
+
+  animation: aparecer 3s ease forwards;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -70%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* corazón especial más brillante */
+.corazon.especial {
+  color: #ffffff;
+
+  text-shadow:
+    0 0 10px #fc515f,
+    0 0 20px #ffffff,
+   
+}
